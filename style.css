@@ -1,0 +1,198 @@
+/* Reset simples */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; }
+
+:root{
+  --bg: #0f0f0f;
+  --card-bg: #141414;
+
+  --accent: #e50914; /* cor Netflix-like */
+}
+
+button {
+  opacity: 95%;
+  width: 100%;
+  max-width: 90px;              /* Tamanho máximo */
+  height: 50px;                   /* Altura personalizada */
+  background: #e50914;            /* Fundo escuro tipo Spotify */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;            /* Bordas arredondadas */
+  padding: 5px 10px;             /* Espaço interno */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Sombra suave */
+  outline: none;
+  accent-color: #1db954;          /* Cor da barra de progresso e play/pause */
+  transition: all 0.3s ease;      /* Suavidade nas interações */
+}
+
+button:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6); /* Efeito suave ao passar o mouse */
+}
+
+body{
+  background: linear-gradient(180deg,#0b0b0b,#121212);
+  color: #fff;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  line-height: 1.3;
+}
+
+/* container */
+.container{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 22px;
+}
+
+/* header */
+.site-header{
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  background: rgba(0,0,0,0.35);
+}
+.site-header .container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 16px;
+  padding: 18px 22px;
+}
+.brand{
+  color: var(--accent);
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+.nav a{
+  color: var(--muted);
+  margin-left: 12px;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+/* Section title */
+.grid-section h2{
+  margin: 18px 0;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+/* Grid of cards */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 18px 0px;
+}
+
+/* Card */
+.card{
+  background: var(--card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  min-height: 120px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+h2:hover{
+  color: #e50914;
+}
+
+/* Hover effect */
+.card:hover{
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.65);
+}
+
+/* Image fits card */
+.card img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display:block;
+}
+
+/* Overlay with gradient and text centered */
+.overlay{
+  position:absolute;
+  inset: 0;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding: 14px;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.85) 100%);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+/* Show overlay on hover (also keyboard focus) */
+.card:hover .overlay,
+.card:focus-within .overlay{
+  opacity: 0.7;
+  transform: translateY(0);
+}
+
+/* Text styles */
+.title{
+  font-size: 1.02rem;
+  margin-bottom: 6px;
+}
+.desc{
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 2px;
+}
+
+/* Footer */
+.site-footer{
+  margin-top: 30px;
+  padding:  18px 0;
+  text-align:center;
+  color: #bdbdbd;
+  font-size: 0.9rem;
+}
+
+/* ===== Responsividade ===== */
+
+/* Tablets (até 768px) */
+@media (max-width: 768px) {
+  .container { padding: 15px; }
+  .site-header .container { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .brand { font-size: 1.3rem; }
+  .nav a { font-size: 0.85rem; margin-left: 8px; }
+  .grid-section h2 { font-size: 1.1rem; }
+  .grid { gap: 12px; }
+  .card { min-height: 100px; }
+  .title { font-size: 0.95rem; }
+  .desc { font-size: 0.8rem; }
+  button { width: 80px; height: 45px; font-size: 0.85rem; }
+}
+
+/* Celulares pequenos (até 480px) */
+@media (max-width: 480px) {
+  .site-header .container { padding: 12px; }
+  .brand { font-size: 1.1rem; }
+  .nav a { font-size: 0.8rem; margin-left: 6px; }
+  .grid-section h2 { font-size: 1rem; }
+  .grid { gap: 10px; }
+  .card { min-height: 90px; }
+  .title { font-size: 0.9rem; }
+  .desc { font-size: 0.75rem; }
+  button { width: 70px; height: 40px; font-size: 0.8rem; }
+}
+
+/* Desktop grande (a partir de 1200px) */
+@media (min-width: 1200px) {
+  .container { max-width: 1200px; }
+  .brand { font-size: 1.7rem; }
+  .grid-section h2 { font-size: 1.4rem; }
+  .card { min-height: 140px; }
+  .title { font-size: 1.1rem; }
+  .desc { font-size: 0.9rem; }
+  button { width: 100px; height: 55px; font-size: 0.95rem; }
+}

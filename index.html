@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <title>MomentosFlix</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="brand">MomentosFlix</h1>
+      <!--áudio e botão-->
+      <audio id="meuAudio" src="audio/audio.mp3"></audio>
+      <button id="toggleButton">Música</button>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="#">Séries</a>
+        <a href="#">Filmes</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="grid-section">
+      <h2>Momentos com você</h2>
+
+      <div class="grid" id="gallery">
+        <!-- Cada .card representa um "quadrado" com imagem + texto -->
+        <article class="card" data-title="Proteção" data-desc="Essa imagem demontra um lugar que te pertence, um lugar onde você sempre estará segura, pois sempre irei te proteger.">
+          <img src="img/foto001.jpeg" alt="Filme 1">
+          <div class="overlay">
+            <h3 class="title">Proteção</h3>
+            <p class="desc">Essa imagem demontra um lugar que te pertence, um lugar onde você sempre estará segura, pois sempre irei te proteger.</p>
+          </div>
+        </article>
+
+        <article class="card" data-title="Cuidado" data-desc="Essa imagem demonstra que não importa o que aconteça, eu sempre estarei disposto a te carregar em meus braços.">
+          <img src="img/foto002.jpeg" alt="Filme 2">
+          <div class="overlay">
+            <h3 class="title">Cuidado</h3>
+            <p class="desc">Essa imagem demonstra que não importa o que aconteça, eu sempre estarei disposto a te carregar em meus braços.</p>
+          </div>
+        </article>
+
+        <article class="card" data-title="Lembraça engraçada" data-desc="Essa foto nos ensina a sempre registrar bons momentos, pois sempre teremos uma pequena memória para que nosso amor se renove ao vê-las.">
+          <img src="img/foto003.jpeg" alt="Filme 3">
+          <div class="overlay">
+            <h3 class="title">Lembraça engraçada</h3>
+            <p class="desc">Essa foto nos ensina a sempre registrar bons momentos, pois sempre teremos uma pequena memória para que nosso amor se renove ao vê-las.</p>
+          </div>
+        </article>
+
+        <article class="card" data-title="Abraço" data-desc="Com essa imagem eu te digo que, o abraço cura. o meu abraço sempre estará aqui pra você.">
+          <img src="img/foto004.jpeg" alt="Filme 4">
+          <div class="overlay">
+            <h3 class="title">Abraço</h3>
+            <p class="desc">Com essa imagem eu te digo que, o abraço cura. o meu abraço sempre estará aqui pra você.</p>
+          </div>
+        </article>
+        <!-- Adicione/remova cards conforme quiser -->
+      </div>
+    </section>
+
+    <section class="grid-section">
+
+      <!--outra sessão-->
+      <h2>Segunda sessão</h2>
+
+      <div class="grid" id="gallery">
+        <!-- Cada .card representa um "quadrado" com imagem + texto -->
+      
+        <article class="card" data-title="Filme 5" data-desc="Descrição do Filme 5">
+          <img src="img/foto005.jpeg" alt="Filme 5">
+          <div class="overlay">
+            <h3 class="title">Dar às mãos</h3>
+            <p class="desc">Sempre estarei aqui para segurar a sua mão.</p>
+          </div>
+        </article>
+
+        <article class="card" data-title="Filme 6" data-desc="Descrição do Filme 6">
+          <img src="img/foto006.jpeg" alt="Filme 6">
+          <div class="overlay">
+            <h3 class="title">Íntimos engraçado</h3>
+            <p class="desc">Demonstração de momento único e engraçado que torna nossos dias mais leves.</p>
+          </div>
+        </article>
+
+        <article class="card" data-title="Filme 7" data-desc="Descrição do Filme 7">
+          <img src="img/foto007.jpeg" alt="Filme 7">
+          <div class="overlay">
+            <h3 class="title">Propósito</h3>
+            <p class="desc">Essa imagem nos lembra o quão maravilhoso Deus é conosco e como Ele habita em nosso casamento.</p>
+          </div>
+        </article>
+
+        <article class="card" data-title="Filme 8" data-desc="Descrição do Filme 8">
+          <img src="img/foto008.jpeg" alt="Filme 8">
+          <div class="overlay">
+            <h3 class="title">Louco Amor</h3>
+            <p class="desc">Uma perfeita transmissão do nosso louco amor, que amamos viver a cada instante.</p>
+          </div>
+        </article>
+      </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">Com Amor: Lucas</div>
+    <p>&copy; <span id="year"></span> Lucas Rosa. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
